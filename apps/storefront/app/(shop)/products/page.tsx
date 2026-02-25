@@ -4,7 +4,7 @@ import { db } from "@meridian/db";
 import { products, tenants } from "@meridian/db/schema";
 import { eq } from "drizzle-orm";
 
-import { Button, EmptyState, SearchInput, Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@meridian/ui";
+import { Button, EmptyState, SearchInput } from "@meridian/ui";
 import { Breadcrumbs } from "../../../components/breadcrumbs";
 import { ProductCard } from "../../../components/product-card";
 
