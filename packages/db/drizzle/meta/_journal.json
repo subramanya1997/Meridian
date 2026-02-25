@@ -8,6 +8,13 @@
       "when": 1771987869991,
       "tag": "0000_calm_hiroim",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1771993420344,
+      "tag": "0001_overjoyed_starfox",
+      "breakpoints": true
     }
   ]
 }
