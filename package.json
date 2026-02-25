@@ -1,0 +1,27 @@
+{
+  "name": "meridian",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "test": "turbo test",
+    "db:generate": "pnpm --filter @meridian/db db:generate",
+    "db:migrate": "pnpm --filter @meridian/db db:migrate",
+    "db:seed": "pnpm --filter @meridian/db db:seed",
+    "db:studio": "pnpm --filter @meridian/db db:studio",
+    "clean": "turbo clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "turbo": "^2.4.4",
+    "typescript": "^5.7.3"
+  }
+}
