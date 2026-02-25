@@ -80,3 +80,13 @@ export { StatusBadge, STATUS_CONFIG, type StatusBadgeProps } from "./components/
 export { EmptyState, type EmptyStateProps } from "./components/empty-state";
 export { SearchInput, type SearchInputProps } from "./components/search-input";
 export { PageHeader, type PageHeaderProps } from "./components/page-header";
+export { DataTable, type DataTableColumn, type DataTableProps } from "./components/data-table";
+export {
+  Pagination,
+  PaginationContent,
+  PaginationLink,
+  PaginationItem,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+} from "./components/pagination";
