@@ -1,60 +1,87 @@
 import Link from "next/link";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight, Star, Package, Leaf } from "lucide-react";
 
-import { Badge, Button } from "@meridian/ui";
-
-const HERO_STATS = [
-  { value: "10K+", label: "Products" },
-  { value: "500+", label: "Brands" },
-  { value: "99.8%", label: "Fill Rate" },
-];
+import { Button, Badge, Card, CardContent } from "@meridian/ui";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden hero-gradient">
-      {/* Background decorations */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl" />
-        <div className="absolute bottom-10 right-20 h-96 w-96 rounded-full bg-indigo-400/10 blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[800px] rounded-full bg-blue-500/5 blur-3xl" />
-      </div>
+    <section className="relative overflow-hidden bg-gradient-to-br from-green-50 via-background to-emerald-50/30">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left — Text */}
+          <div>
+            <Badge variant="secondary" className="mb-6 px-3 py-1 text-xs font-medium">
+              <Leaf className="h-3 w-3 mr-1.5 text-primary" />
+              AI-Powered B2B Commerce
+            </Badge>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-        <div className="mx-auto max-w-3xl text-center">
-          <Badge className="rounded-full border-blue-200 bg-blue-50 text-blue-700 mb-8 px-4 py-1.5">
-            <Zap className="h-3.5 w-3.5 mr-2 text-blue-600" />
-            AI-Powered B2B Commerce Platform
-          </Badge>
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight text-foreground leading-[1.1]">
+              Your Trusted{" "}
+              <span className="text-primary">Wholesale Supply</span>{" "}
+              Partner
+            </h1>
 
-          <h1 className="text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
-            Professional Supplies,{" "}
-            <span className="text-gradient">Delivered Fast</span>
-          </h1>
+            <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-md">
+              Order products, manage inventory, and get doorstep delivery within 24 hours. Volume pricing for every business.
+            </p>
 
-          <p className="mx-auto mt-6 max-w-xl text-lg text-slate-500 leading-relaxed">
-            Your trusted wholesale source for plumbing, tools, and industrial equipment.
-            Volume pricing, real-time inventory, and dedicated support.
-          </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button asChild size="lg" className="rounded-full px-8">
+                <Link href="/products">
+                  Shop Now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-full px-8">
+                <Link href="/categories">Explore More</Link>
+              </Button>
+            </div>
 
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" className="rounded-xl px-7 py-3.5 text-[14px] font-semibold shadow-xl shadow-slate-900/20">
-              <Link href="/products">
-                Browse Catalog
-                <ArrowRight className="h-4 w-4 ml-2" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-xl border-2 px-7 py-3.5 text-[14px] font-semibold">
-              <Link href="/quick-order">Quick Order</Link>
-            </Button>
+            {/* Trust badges */}
+            <div className="mt-10 flex items-center gap-6">
+              <div className="flex items-center gap-1.5">
+                <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
+                <span className="text-sm font-semibold">4.9/5</span>
+              </div>
+              <span className="text-sm text-muted-foreground">
+                Rated by 2,400+ businesses
+              </span>
+            </div>
           </div>
 
-          <div className="mt-12 flex items-center justify-center gap-8">
-            {HERO_STATS.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-2xl font-bold text-slate-900">{stat.value}</div>
-                <div className="text-xs text-slate-500 font-medium">{stat.label}</div>
+          {/* Right — Visual */}
+          <div className="relative hidden lg:block">
+            <div className="relative rounded-3xl bg-gradient-to-br from-primary/10 via-primary/5 to-emerald-100/50 p-12 aspect-square max-w-md ml-auto flex items-center justify-center">
+              {/* Main product visual placeholder */}
+              <div className="text-center">
+                <div className="mx-auto mb-4 flex h-32 w-32 items-center justify-center rounded-full bg-white shadow-lg">
+                  <Package className="h-16 w-16 text-primary/60" />
+                </div>
+                <p className="text-sm font-medium text-muted-foreground">Premium Supplies</p>
               </div>
-            ))}
+
+              {/* Floating product card */}
+              <Card className="absolute -bottom-4 -left-8 shadow-lg animate-bounce-slow">
+                <CardContent className="flex items-center gap-3 p-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                    <Package className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold">Kitchen Faucet</p>
+                    <p className="text-xs text-muted-foreground">$149.99</p>
+                  </div>
+                  <Badge className="ml-2 text-[10px]">New</Badge>
+                </CardContent>
+              </Card>
+
+              {/* Stats bubble */}
+              <Card className="absolute -top-2 -right-4 shadow-lg">
+                <CardContent className="p-3 text-center">
+                  <p className="text-2xl font-bold text-primary">10K+</p>
+                  <p className="text-[10px] text-muted-foreground font-medium">Products</p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>

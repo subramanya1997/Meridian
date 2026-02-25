@@ -1,30 +1,58 @@
 import { Star } from "lucide-react";
 
+import { Card, CardContent, cn } from "@meridian/ui";
+
 interface TestimonialCardProps {
   name: string;
   role: string;
   text: string;
+  title?: string;
   stars: number;
+  accentColor?: string;
 }
 
-export function TestimonialCard({ name, role, text, stars }: TestimonialCardProps) {
+export function TestimonialCard({
+  name,
+  role,
+  text,
+  title = "Great Experience!",
+  stars,
+  accentColor = "bg-primary",
+}: TestimonialCardProps) {
   return (
-    <div className="rounded-2xl bg-white/5 border border-white/10 p-8 backdrop-blur-sm">
-      <div className="flex gap-1 mb-4">
-        {Array.from({ length: stars }).map((_, i) => (
-          <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
-        ))}
-      </div>
-      <p className="text-[15px] text-slate-300 leading-relaxed italic">&ldquo;{text}&rdquo;</p>
-      <div className="mt-6 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 text-sm font-bold text-white">
-          {name.charAt(0)}
+    <Card className={cn("overflow-hidden border-0", accentColor)}>
+      <CardContent className="p-6 text-white">
+        {/* Stars */}
+        <div className="flex gap-0.5 mb-3">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star
+              key={i}
+              className={cn(
+                "h-4 w-4",
+                i < stars ? "fill-amber-400 text-amber-400" : "fill-white/30 text-white/30"
+              )}
+            />
+          ))}
+          <span className="text-xs text-white/70 ml-2">Verified</span>
         </div>
-        <div>
-          <p className="text-sm font-semibold text-white">{name}</p>
-          <p className="text-[12px] text-slate-400">{role}</p>
+
+        {/* Title */}
+        <h4 className="font-semibold mb-2">{title}</h4>
+
+        {/* Text */}
+        <p className="text-sm text-white/85 leading-relaxed line-clamp-3">{text}</p>
+
+        {/* Author */}
+        <div className="mt-4 flex items-center gap-3">
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-xs font-bold">
+            {name.charAt(0)}
+          </div>
+          <div>
+            <p className="text-sm font-medium">{name}</p>
+            <p className="text-xs text-white/60">{role}</p>
+          </div>
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }
