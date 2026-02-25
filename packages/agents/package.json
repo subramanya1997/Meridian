@@ -1,0 +1,17 @@
+{
+  "name": "@meridian/agents",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "lint": "echo 'lint ok'"
+  },
+  "devDependencies": {
+    "@meridian/tsconfig": "workspace:*",
+    "typescript": "^5.7.3"
+  }
+}
