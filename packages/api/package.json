@@ -15,11 +15,13 @@
     "@meridian/db": "workspace:*",
     "@meridian/types": "workspace:*",
     "@trpc/server": "^11.0.0-rc.682",
+    "drizzle-orm": "^0.38.4",
     "superjson": "^2.2.2",
     "zod": "^3.24.1"
   },
   "devDependencies": {
     "@meridian/tsconfig": "workspace:*",
+    "@types/node": "^22.12.0",
     "typescript": "^5.7.3"
   }
 }
