@@ -90,3 +90,33 @@ export {
   PaginationNext,
   PaginationEllipsis,
 } from "./components/pagination";
+
+// Carousel
+export {
+  type CarouselApi,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "./components/carousel";
+
+// Sheet
+export {
+  Sheet,
+  SheetPortal,
+  SheetOverlay,
+  SheetTrigger,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetFooter,
+  SheetTitle,
+  SheetDescription,
+} from "./components/sheet";
+
+// Accordion
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./components/accordion";
+
+// AspectRatio
+export { AspectRatio } from "./components/aspect-ratio";
